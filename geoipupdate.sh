@@ -21,8 +21,7 @@ _fetch() {
     url="$1"
     out="$2"
 	
-	echo Fetching $2 from $1
-	
+    echo Fetching $2 from $1
     TEMPDIR="$(mktemp -d '/usr/local/share/GeoIP/GeoIPupdate.XXXXXX')"
     trap 'rc=$? ; set +e ; rm -rf "'"$TEMPDIR"'" ; exit $rc' 0
     if fetch -o "$TEMPDIR/$out.tar.gz" "$url"; then
