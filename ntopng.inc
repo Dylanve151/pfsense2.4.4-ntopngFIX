@@ -258,6 +258,8 @@ function ntopng_update_geoip() {
 		$ntopng_config = $config['installedpackages']['ntopng']['config'][0];
 		ntopng_services_stop();
 		if ($ntopng_config['enable'] == "on") {
+                        ntopng_redis_started(); /* I added this. otherwise the service wouldn't start */
+                        sleep(5);
 			start_service("ntopng");
 		}
 	}
@@ -276,7 +278,7 @@ function ntopng_fixup_geoip() {
 	}
 
 	/* Use a separate glob since the filenames could have changed since the last run */
-	foreach(glob("{$source_dir}/Geo*.mmdb*") as $geofile) {
+	foreach(glob("{$source_dir}/Geo*.mmdb") as $geofile) {
 		$target_file = $target_dir . '/' . basename($geofile);
 		if (!file_exists($target_file)) {
 			symlink($geofile, $target_file);
