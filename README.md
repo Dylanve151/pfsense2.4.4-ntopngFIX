@@ -6,6 +6,7 @@ I hope it will be usfull for you ;)
 
 
 file locations:
+
 /usr/local/bin/geoipupdate.sh
 
 /usr/local/pkg/ntopng.inc
