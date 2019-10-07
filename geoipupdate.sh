@@ -3,14 +3,14 @@
 # You can set the following environment variables:
 #
 # GEOIP_DB_SERVER: The default download server is geolite.maxmind.com
-# GEOIP_FETCH_CITY: If set to true, download the GeoLite City DB
-# GEOIP_FETCH_ASN: If set to true, download the GeoIP ASN DB
+# GEOIP_FETCH_CITY: If set to yes, download the GeoLite City DB
+# GEOIP_FETCH_ASN: If set to yes, download the GeoIP ASN DB
 
 #Fixed by Dylanve151 / Dylan-e
 
 GEOIP_DB_SERVER=${GEOIP_DB_SERVER:=geolite.maxmind.com}
-GEOIP_FETCH_CITY=${GEOIP_FETCH_CITY:=}
-GEOIP_FETCH_ASN=${GEOIP_FETCH_ASN:=}
+GEOIP_FETCH_CITY=${GEOIP_FETCH_CITY:=yes}
+GEOIP_FETCH_ASN=${GEOIP_FETCH_ASN:=yes}
 
 set -eu
 
@@ -42,9 +42,9 @@ _fetch() {
 
 _fetch "https://${GEOIP_DB_SERVER}/download/geoip/database/GeoLite2-Country.tar.gz" GeoLite2-Country.mmdb
 
-if [ "$GEOIP_FETCH_CITY" -eq "true" ]; then
+if [ "$GEOIP_FETCH_CITY" -eq "yes" ]; then
 	_fetch "https://${GEOIP_DB_SERVER}/download/geoip/database/GeoLite2-City.tar.gz" GeoLite2-City.mmdb
 fi
-if [ "$GEOIP_FETCH_ASN" -eq "true" ]; then
+if [ "$GEOIP_FETCH_ASN" -eq "yes" ]; then
 	fetch "https://${GEOIP_DB_SERVER}/download/geoip/database/GeoLite2-ASN.tar.gz" GeoLite2-ASN.mmdb
 fi
