@@ -15,6 +15,6 @@ Update GeoIP Data button seems to be working fine with this
 
 # Needs fixing but I am to lazy
 
-ntopng service stops after updating pressing the Update GeoIP Data button.
+ntopng service stops after pressing the Update GeoIP Data button.
 
 Last part of geoipupdate.sh
