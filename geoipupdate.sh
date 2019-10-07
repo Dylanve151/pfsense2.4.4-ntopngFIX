@@ -42,6 +42,7 @@ _fetch() {
 
 _fetch "https://${GEOIP_DB_SERVER}/download/geoip/database/GeoLite2-Country.tar.gz" GeoLite2-Country.mmdb
 
+#for some reason this part doesnt work and i am to lazy to fix it :)
 if [ "$GEOIP_FETCH_CITY" -eq "yes" ]; then
 	_fetch "https://${GEOIP_DB_SERVER}/download/geoip/database/GeoLite2-City.tar.gz" GeoLite2-City.mmdb
 fi
