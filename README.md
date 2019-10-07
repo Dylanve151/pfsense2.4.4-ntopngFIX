@@ -2,12 +2,13 @@
 
 GeoIP stopped working so i fixed it.
 
-I hope it will be usfull for you ;)
+I hope it will be usefull for you ;)
 
+Update GeoIP Data button seems to be working fine with this
 
 # file locations:
 
-/usr/local/bin/geoipupdate.sh
+/usr/local/bin/geoipupdate.sh (Not needed I think)
 
 /usr/local/pkg/ntopng.inc
 
