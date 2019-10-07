@@ -13,6 +13,8 @@ Update GeoIP Data button seems to be working fine with this
 /usr/local/pkg/ntopng.inc
 
 
-# needs fixing but I am to lazy
+# Needs fixing but I am to lazy
+
+ntopng service stops after updating pressing the Update GeoIP Data button.
 
 Last part of geoipupdate.sh
